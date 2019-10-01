@@ -1,24 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
-	a := []int{4, 9, 8, 2, 7}
-	fmt.Println("Unsorted array: ",a)
-	bubbleSort(a)
-	fmt.Println("Sorted array: ", a)
+	a := []int{1, 2, 2, 4, 5}
+	asd := sort.IntsAreSorted(a)
+	if asd == true {
+		fmt.Println("Array is alredy sorted")
+	} else {
+		fmt.Println("Sorted array: ")
+		bubbleSort(a)
+	}
 }
 func bubbleSort(a []int) {
-	end := len(a) - 1
-	for {
-		if end == 0 {
-			break
-		}
-		for i := 0; i < len(a)-1; i++ {
-			if a[i] > a[i+1] {
-				a[i], a[i+1] = a[i+1], a[i]
-			}
-		}
-		end -= 1
-	}
+	sort.Ints(a)
+	fmt.Println(a)
 }
