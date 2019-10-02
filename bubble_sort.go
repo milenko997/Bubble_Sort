@@ -9,10 +9,10 @@ func main() {
 	fmt.Println("Sorted array: ", a)
 }
 func bubbleSort(a []int) {
-	end := len(a) - 1
+	//end := len(a) - 1
 	for {
 		swapped := false
-		fmt.Println(end)
+		//fmt.Println(end)
 		for i := 0; i < len(a)-1; i++ {
 			//fmt.Println(end, i)
 			if a[i] > a[i+1] {
