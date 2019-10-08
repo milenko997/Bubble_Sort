@@ -3,22 +3,25 @@ package main
 import "fmt"
 
 func main() {
-	a := []int{4, 9, 8, 2, 7}
-	fmt.Println("Unsorted array: ",a)
+	a := []int{2, 1, 3, 4, 5, 6}
+	fmt.Println("Unsorted array: ", a)
 	bubbleSort(a)
 	fmt.Println("Sorted array: ", a)
 }
 func bubbleSort(a []int) {
-	end := len(a) - 1
+	//end := len(a) - 1
 	for {
-		if end == 0 {
-			break
-		}
+		swapped := false
+		//fmt.Println(end)
 		for i := 0; i < len(a)-1; i++ {
+			//fmt.Println(end, i)
 			if a[i] > a[i+1] {
+				swapped = true
 				a[i], a[i+1] = a[i+1], a[i]
 			}
 		}
-		end -= 1
+		if !swapped {
+			break
+		}
 	}
 }
